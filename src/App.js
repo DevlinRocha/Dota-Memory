@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Scoreboard from './components/Scoreboard';
+import Gameboard from './components/Gameboard';
+import './styles/App.css';
 
 function App() {
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+  const [isGameOver, setIsGameOver] = useState(true);
+
+  function newGame() {
+    setIsGameOver(false);
+    setCurrentScore(0);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <Scoreboard currentScore={currentScore} setCurrentScore={setCurrentScore} highScore={highScore} setHighScore={setHighScore} />
+      </nav>
+      {isGameOver
+        ? <button onClick={newGame}>New game!</button>
+        : <Gameboard currentScore={currentScore} setCurrentScore={setCurrentScore} highScore={highScore} setHighScore={setHighScore} setIsGameOver={setIsGameOver} />
+      }
     </div>
   );
-}
+};
 
 export default App;
