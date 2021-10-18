@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/dota-memory/static/css/main.e6966209.chunk.css",
+    "main.js": "/dota-memory/static/js/main.d14488bb.chunk.js",
+    "main.js.map": "/dota-memory/static/js/main.d14488bb.chunk.js.map",
+    "runtime-main.js": "/dota-memory/static/js/runtime-main.d9c9007a.js",
+    "runtime-main.js.map": "/dota-memory/static/js/runtime-main.d9c9007a.js.map",
+    "static/js/2.3e61b9e9.chunk.js": "/dota-memory/static/js/2.3e61b9e9.chunk.js",
+    "static/js/2.3e61b9e9.chunk.js.map": "/dota-memory/static/js/2.3e61b9e9.chunk.js.map",
+    "index.html": "/dota-memory/index.html",
+    "static/css/main.e6966209.chunk.css.map": "/dota-memory/static/css/main.e6966209.chunk.css.map",
+    "static/js/2.3e61b9e9.chunk.js.LICENSE.txt": "/dota-memory/static/js/2.3e61b9e9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d9c9007a.js",
+    "static/js/2.3e61b9e9.chunk.js",
+    "static/css/main.e6966209.chunk.css",
+    "static/js/main.d14488bb.chunk.js"
+  ]
+}
