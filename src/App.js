@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import Scoreboard from './components/Scoreboard';
+import GameOver from './components/GameOver';
 import Gameboard from './components/Gameboard';
+import Scoreboard from './components/Scoreboard';
 import './styles/App.css';
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-  const [isGameOver, setIsGameOver] = useState(true);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   function newGame() {
     setIsGameOver(false);
@@ -19,7 +20,7 @@ function App() {
         <Scoreboard currentScore={currentScore} setCurrentScore={setCurrentScore} highScore={highScore} setHighScore={setHighScore} />
       </nav>
       {isGameOver
-        ? <button onClick={newGame}>New game!</button>
+        ? <GameOver currentScore={currentScore} setCurrentScore={setCurrentScore} highScore={highScore} setIsGameOver={setIsGameOver} newGame={newGame} />
         : <Gameboard currentScore={currentScore} setCurrentScore={setCurrentScore} highScore={highScore} setHighScore={setHighScore} setIsGameOver={setIsGameOver} />
       }
     </div>
