@@ -4,20 +4,56 @@ import '../styles/Gameboard.css';
 
 export default function Gameboard(props) {
 
-    const [colors, setColors] = useState([
-        'red',
-        'orange',
-        'yellow',
-        'green',
-        'blue',
-        'purple',
-    ]);
+    const [heroes, setHeroes] = useState([]);
+    const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        const newColors = [...colors];
-        shuffleCards(newColors)
-        setColors(newColors);
+        fetchHeroes();
+        const newHeroes = [...heroes];
+        shuffleCards(newHeroes)
+        setHeroes(newHeroes);
+    }, []);
+
+    useEffect(() => {
+        const newCards = [...cards];
+        shuffleCards(newCards)
+        setCards(newCards);
     }, [props.currentScore]);
+
+    useEffect(() => {
+        const heroList = [];
+        for (let i=0; i<heroes.length; i++) {
+            const hero = {
+                name: heroes[i].localized_name,
+                icon: 'https://api.opendota.com' + heroes[i].icon,
+                image: 'https://api.opendota.com' + heroes[i].img,
+                id: heroes[i].id,
+                clicked: false,
+            };
+            heroList.push(hero);
+        };
+        setCards(heroList);
+    }, [heroes]);
+
+    function findDuplicates(array) {
+        const uniqueElements = Array.from(new Set(array.map(item => item.id)))
+        .map(id => {
+            return array.find(item => item.id === id);
+        });
+        return uniqueElements;
+    };
+
+    async function fetchHeroes() {
+        const fetchedHeroes = await fetch('https://api.opendota.com/api/heroStats/');
+        const heroesData = await fetchedHeroes.json();
+        const randomHeroes = [];
+
+        while (randomHeroes.length < 6) {
+            const randomHero = await heroesData[Math.floor(Math.random() * heroesData.length)];
+            randomHeroes.push(randomHero);
+        };
+        await setHeroes(findDuplicates(randomHeroes));
+    };
 
     function shuffleCards(array) {
         let currentIndex = array.length, randomIndex;
@@ -38,12 +74,10 @@ export default function Gameboard(props) {
 
     return (
         <section className='gameboard'>
-            {/* <button onClick={newGame}>New Game! </button> */}
-            {colors.map(color=>{
+            {cards.map(card=>{
                 return (
-                    <Card colors={colors} setColors={setColors}
-                    shuffleCards={shuffleCards}
-                    key={color} color={color}
+                    <Card key={card.id}
+                    card={card} cards={cards} setCards={setCards}
                     currentScore={props.currentScore} setCurrentScore={props.setCurrentScore}
                     highScore={props.highScore} setHighScore={props.setHighScore}
                     setIsGameOver={props.setIsGameOver} />

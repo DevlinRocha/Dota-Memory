@@ -1,5 +1,11 @@
+.cardContainer {
+    background-color: white;
+    border-radius: 3px;
+}
+
 .card {
-    width: 50px;
-    height: 60px;
-    margin: 5px;
+    width: clamp(75px, 125px, 200px);
+    height: auto;
+    cursor: pointer;
+    color: black;
 }
