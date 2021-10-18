@@ -4,7 +4,7 @@ import Gameboard from './components/Gameboard';
 import Scoreboard from './components/Scoreboard';
 import './styles/App.css';
 
-function App() {
+export default function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
@@ -26,5 +26,3 @@ function App() {
     </div>
   );
 };
-
-export default App;
