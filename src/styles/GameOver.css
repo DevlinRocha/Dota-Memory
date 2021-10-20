@@ -1,0 +1,8 @@
+.gameOver {
+    display: flex;
+    flex-direction: column;
+}
+
+.defeated > * {
+    margin: 10px;
+}

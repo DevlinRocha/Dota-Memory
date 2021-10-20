@@ -85,7 +85,8 @@ export default function Gameboard(props) {
                     card={card} cards={cards} setCards={setCards}
                     currentScore={props.currentScore} setCurrentScore={props.setCurrentScore}
                     highScore={props.highScore} setHighScore={props.setHighScore}
-                    setIsGameOver={props.setIsGameOver} />
+                    setIsGameOver={props.setIsGameOver}
+                    setLastClicked={props.setLastClicked} />
                 );
             })}
             </section>

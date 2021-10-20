@@ -2,6 +2,9 @@ import '../styles/Card.css';
 
 export default function Card(props) {
     const handleClick = () => {
+        
+        props.setLastClicked(props.card);
+
         if (props.card.clicked) {
             props.setIsGameOver(true);
         } else {

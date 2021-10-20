@@ -7,6 +7,7 @@ export default function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [lastClicked, setLastClicked] = useState(null);
 
   function newGame() {
     setIsGameOver(false);
@@ -16,8 +17,8 @@ export default function App() {
   return (
     <div className="App">
       {isGameOver
-        ? <GameOver currentScore={currentScore} setCurrentScore={setCurrentScore} highScore={highScore} setIsGameOver={setIsGameOver} newGame={newGame} />
-        : <Gameboard currentScore={currentScore} setCurrentScore={setCurrentScore} highScore={highScore} setHighScore={setHighScore} setIsGameOver={setIsGameOver} />
+        ? <GameOver currentScore={currentScore} setCurrentScore={setCurrentScore} highScore={highScore} setIsGameOver={setIsGameOver} newGame={newGame} lastClicked={lastClicked} />
+        : <Gameboard currentScore={currentScore} setCurrentScore={setCurrentScore} highScore={highScore} setHighScore={setHighScore} setIsGameOver={setIsGameOver} setLastClicked={setLastClicked} />
       }
     </div>
   );
