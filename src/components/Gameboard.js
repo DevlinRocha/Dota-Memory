@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Card from './Card';
+import Scoreboard from './Scoreboard';
 import '../styles/Gameboard.css';
 
 export default function Gameboard(props) {
@@ -73,7 +74,11 @@ export default function Gameboard(props) {
     };
 
     return (
-        <section className='gameboard'>
+        <section>
+            <nav>
+                <Scoreboard currentScore={props.currentScore} setCurrentScore={props.setCurrentScore} highScore={props.highScore} setHighScore={props.setHighScore} />
+            </nav>
+            <section className='gameboard'>
             {cards.map(card=>{
                 return (
                     <Card key={card.id}
@@ -83,6 +88,7 @@ export default function Gameboard(props) {
                     setIsGameOver={props.setIsGameOver} />
                 );
             })}
+            </section>
         </section>
     );
 };
