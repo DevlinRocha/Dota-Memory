@@ -1,16 +1,12 @@
 # Dota Memory
 
-## Project Overview
-
-### Description
-
 A simple memory game built with React and the OpenDota API.
 
 [Play the game here!](https://devlin-codes.github.io/Dota-Memory/)
 
 This was an assignment from [The Odin Project](https://www.theodinproject.com/).
 
-### How to Play
+## How to Play
 
 * Score a point whenever a card is clicked
 * The cards are shuffled whenever one is selected
