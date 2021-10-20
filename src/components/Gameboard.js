@@ -75,9 +75,9 @@ export default function Gameboard(props) {
 
     return (
         <section>
-            <nav>
+            <header>
                 <Scoreboard currentScore={props.currentScore} setCurrentScore={props.setCurrentScore} highScore={props.highScore} setHighScore={props.setHighScore} />
-            </nav>
+            </header>
             <section className='gameboard'>
             {cards.map(card=>{
                 return (

@@ -3,8 +3,8 @@
 export default function Scoreboard(props) {
     return (
         <div>
-            <p>Current Score: {props.currentScore}</p>
-            <p>High Score: {props.highScore}</p>
+            <h3>Current Score: {props.currentScore}</h3>
+            <h3>High Score: {props.highScore}</h3>
         </div>
     );
 };
