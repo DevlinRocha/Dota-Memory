@@ -2,7 +2,7 @@
 
 A simple memory game built with React and the OpenDota API.
 
-[Play the game here!](https://devlin-codes.github.io/Dota-Memory/)
+[Play the game here!](https://devlinrocha.github.io/Dota-Memory/)
 
 This was an assignment from [The Odin Project](https://www.theodinproject.com/).
 
