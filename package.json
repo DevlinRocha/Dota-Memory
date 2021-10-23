@@ -2,7 +2,7 @@
   "name": "memory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.devlin-codes.github.io/Dota-Memory",
+  "homepage": "https://www.devlinrocha.github.io/Dota-Memory",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
