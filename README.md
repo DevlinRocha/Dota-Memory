@@ -8,18 +8,51 @@ This was an assignment from [The Odin Project](https://www.theodinproject.com/).
 
 ## How to Play
 
-* Score a point whenever a card is clicked
-* The cards are shuffled whenever one is selected
-* Click on the same card twice and it's game over!
+- Score a point whenever a card is clicked
+
+- The cards are shuffled whenever one is selected
+
+- Click on the same card twice and it's game over!
 
 ## Getting Started
 
+Instructions to run the project locally are below.
+
+1. Clone the repository:
+
+```bash
+# HTTPS
+git clone https://github.com/DevlinRocha/Dota-Memory.git
+
+# or
+
+# SSH
+git clone git@github.com:DevlinRocha/Dota-Memory.git
 ```
-git clone https://github.com/Devlin-Codes/Dota-Memory.git
-cd Dota-Memory
+
+2. Go into the directory and install modules:
+
+```bash
+cd Dota-Memory/
+
 npm install
-npm start
+
+# or
+
+yarn install
 ```
+
+3. Run the development server:
+
+```bash
+npm run dev
+
+# or
+
+yarn dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 ## Development
 
